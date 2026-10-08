@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-08T21:22:17.057152+00:00",
+  "title": "Design System: Compact reasoning",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Deep navy",
+        "canonical": "#132d4f",
+        "tonalRamp": [
+          "oklch(0.1500 0.0699 256.06)",
+          "oklch(0.2643 0.0699 256.06)",
+          "oklch(0.3786 0.0699 256.06)",
+          "oklch(0.4929 0.0699 256.06)",
+          "oklch(0.6071 0.0699 256.06)",
+          "oklch(0.7214 0.0699 256.06)",
+          "oklch(0.8357 0.0699 256.06)",
+          "oklch(0.9500 0.0699 256.06)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted blue",
+        "canonical": "#4c6079",
+        "tonalRamp": [
+          "oklch(0.1500 0.0473 254.27)",
+          "oklch(0.2643 0.0473 254.27)",
+          "oklch(0.3786 0.0473 254.27)",
+          "oklch(0.4929 0.0473 254.27)",
+          "oklch(0.6071 0.0473 254.27)",
+          "oklch(0.7214 0.0473 254.27)",
+          "oklch(0.8357 0.0473 254.27)",
+          "oklch(0.9500 0.0473 254.27)"
+        ]
+      },
+      "blue": {
+        "role": "primary",
+        "displayName": "Cobalt",
+        "canonical": "#164dcf",
+        "tonalRamp": [
+          "oklch(0.1500 0.2083 263.28)",
+          "oklch(0.2643 0.2083 263.28)",
+          "oklch(0.3786 0.2083 263.28)",
+          "oklch(0.4929 0.2083 263.28)",
+          "oklch(0.6071 0.2083 263.28)",
+          "oklch(0.7214 0.2083 263.28)",
+          "oklch(0.8357 0.2083 263.28)",
+          "oklch(0.9500 0.2083 263.28)"
+        ]
+      },
+      "ice": {
+        "role": "neutral",
+        "displayName": "Ice blue",
+        "canonical": "#e9f2ff",
+        "tonalRamp": [
+          "oklch(0.1500 0.0200 257.47)",
+          "oklch(0.2643 0.0200 257.47)",
+          "oklch(0.3786 0.0200 257.47)",
+          "oklch(0.4929 0.0200 257.47)",
+          "oklch(0.6071 0.0200 257.47)",
+          "oklch(0.7214 0.0200 257.47)",
+          "oklch(0.8357 0.0200 257.47)",
+          "oklch(0.9500 0.0200 257.47)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Pale blue border",
+        "canonical": "#c7d7ec",
+        "tonalRamp": [
+          "oklch(0.1500 0.0339 255.22)",
+          "oklch(0.2643 0.0339 255.22)",
+          "oklch(0.3786 0.0339 255.22)",
+          "oklch(0.4929 0.0339 255.22)",
+          "oklch(0.6071 0.0339 255.22)",
+          "oklch(0.7214 0.0339 255.22)",
+          "oklch(0.8357 0.0339 255.22)",
+          "oklch(0.9500 0.0339 255.22)"
+        ]
+      },
+      "teal": {
+        "role": "secondary",
+        "displayName": "Deep teal",
+        "canonical": "#086858",
+        "tonalRamp": [
+          "oklch(0.1500 0.0838 176.92)",
+          "oklch(0.2643 0.0838 176.92)",
+          "oklch(0.3786 0.0838 176.92)",
+          "oklch(0.4929 0.0838 176.92)",
+          "oklch(0.6071 0.0838 176.92)",
+          "oklch(0.7214 0.0838 176.92)",
+          "oklch(0.8357 0.0838 176.92)",
+          "oklch(0.9500 0.0838 176.92)"
+        ]
+      },
+      "amber": {
+        "role": "secondary",
+        "displayName": "Warm amber",
+        "canonical": "#7a4800",
+        "tonalRamp": [
+          "oklch(0.1500 0.1002 66.12)",
+          "oklch(0.2643 0.1002 66.12)",
+          "oklch(0.3786 0.1002 66.12)",
+          "oklch(0.4929 0.1002 66.12)",
+          "oklch(0.6071 0.1002 66.12)",
+          "oklch(0.7214 0.1002 66.12)",
+          "oklch(0.8357 0.1002 66.12)",
+          "oklch(0.9500 0.1002 66.12)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "White paper",
+        "canonical": "#fff",
+        "tonalRamp": [
+          "oklch(0.1500 0.0000 0.00)",
+          "oklch(0.2643 0.0000 0.00)",
+          "oklch(0.3786 0.0000 0.00)",
+          "oklch(0.4929 0.0000 0.00)",
+          "oklch(0.6071 0.0000 0.00)",
+          "oklch(0.7214 0.0000 0.00)",
+          "oklch(0.8357 0.0000 0.00)",
+          "oklch(0.9500 0.0000 0.00)"
+        ]
+      },
+      "soft": {
+        "role": "neutral",
+        "displayName": "Quiet blue surface",
+        "canonical": "#f4f8fe",
+        "tonalRamp": [
+          "oklch(0.1500 0.0091 258.34)",
+          "oklch(0.2643 0.0091 258.34)",
+          "oklch(0.3786 0.0091 258.34)",
+          "oklch(0.4929 0.0091 258.34)",
+          "oklch(0.6071 0.0091 258.34)",
+          "oklch(0.7214 0.0091 258.34)",
+          "oklch(0.8357 0.0091 258.34)",
+          "oklch(0.9500 0.0091 258.34)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Infographic title",
+        "purpose": "Introduce the visual explanation."
+      },
+      "headline": {
+        "displayName": "Reading headline",
+        "purpose": "Progress, results and reference sections."
+      },
+      "body": {
+        "displayName": "Readable body",
+        "purpose": "Short explanations and detailed reading."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "shared-easing",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Diagram and explanation transitions."
+      },
+      {
+        "name": "drawer-sheet-duration",
+        "value": "0.32s",
+        "purpose": "Opening the detail panel."
+      },
+      {
+        "name": "content-reveal-duration",
+        "value": "0.3s",
+        "purpose": "Changed explanations; reduced motion disables animation."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow-desktop",
+        "value": "1050px"
+      },
+      {
+        "name": "stacked-and-sheet",
+        "value": "850px"
+      },
+      {
+        "name": "mobile-body",
+        "value": "700px"
+      },
+      {
+        "name": "small-mobile",
+        "value": "480px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Diagram button",
+      "kind": "button",
+      "refersTo": "diagram-button",
+      "description": "One clickable figure with an active state.",
+      "html": "<button class=\"ds-diagram\">Teach the small model with LoRA</button>",
+      "css": ".ds-diagram{font-family:Atkinson,\"Segoe UI\",sans-serif;text-align:left;padding:1rem 1.15rem;background:var(--soft);color:var(--ink);border:1px solid var(--line);border-radius:14px;transition:background .18s cubic-bezier(.16,1,.3,1)}.ds-diagram:hover{background:var(--ice);border-color:#93b6f4}.ds-diagram[aria-pressed=\"true\"]{border-color:var(--blue);background:#edf4ff;box-shadow:inset 0 0 0 1px var(--blue)}.ds-diagram:focus-visible{outline:3px solid var(--blue);outline-offset:4px}"
+    },
+    {
+      "name": "Step navigation",
+      "kind": "button",
+      "refersTo": "navigation-button",
+      "description": "Previous or next explanation with a disabled boundary.",
+      "html": "<button class=\"ds-step\">Next step</button>",
+      "css": ".ds-step{font-family:Atkinson,\"Segoe UI\",sans-serif;padding:.45rem .7rem;border:0;border-radius:6px;font-size:.8rem;color:var(--blue);background:var(--ice)}.ds-step:hover{background:var(--ice)}.ds-step:disabled{opacity:.5;cursor:default}.ds-step:focus-visible{outline:3px solid var(--blue);outline-offset:4px}"
+    },
+    {
+      "name": "Detail levels",
+      "kind": "button",
+      "description": "Three progressively deeper reading options.",
+      "html": "<div class=\"ds-levels\"><button aria-pressed=\"true\">The idea</button><button>Visual example</button><button>Method details</button></div>",
+      "css": ".ds-levels{display:flex;gap:.2rem;flex-wrap:wrap;font-family:Atkinson,\"Segoe UI\",sans-serif}.ds-levels button{color:var(--ink);background:transparent;border:0;border-radius:7px;padding:.5rem .55rem;font-size:.76rem}.ds-levels button:hover,.ds-levels button[aria-pressed=\"true\"]{background:var(--ice);color:var(--blue)}.ds-levels button[aria-pressed=\"true\"]{font-weight:700}.ds-levels button:focus-visible{outline:3px solid var(--blue);outline-offset:4px}"
+    },
+    {
+      "name": "Navigation links",
+      "kind": "nav",
+      "description": "Compact reading navigation.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#explore\">Explainer</a><a href=\"#progress\">Progress</a><a href=\"#results\">Results</a></nav>",
+      "css": ".ds-nav{display:flex;gap:1.7rem;font-family:Atkinson,\"Segoe UI\",sans-serif}.ds-nav a{color:var(--ink);font-size:.95rem;text-decoration:none}.ds-nav a:hover{color:var(--blue)}.ds-nav a:focus-visible{outline:3px solid var(--blue);outline-offset:4px}"
+    },
+    {
+      "name": "Dataset figure",
+      "kind": "card",
+      "description": "A labelled data group with a nested pilot.",
+      "html": "<div class=\"ds-data\"><b>1,000</b><span>Learn the format</span><span class=\"ds-pilot\"><b>100-question pilot</b>inside the 1,000</span></div>",
+      "css": ".ds-data{display:flex;flex-direction:column;font-family:Atkinson,\"Segoe UI\",sans-serif;color:var(--ink);background:#cff0e5;border-radius:8px;padding:.7rem;line-height:1.3;font-size:.82rem}.ds-data>b{font-size:1.25rem}.ds-pilot{display:flex;flex-direction:column;border:1px dashed var(--teal);padding:.5rem;margin-top:.6rem;border-radius:6px;font-size:.72rem}"
+    },
+    {
+      "name": "Training-size range",
+      "kind": "input",
+      "description": "Illustrative training-count control.",
+      "html": "<label class=\"ds-range\">Training examples<input type=\"range\" min=\"100\" max=\"6000\" step=\"100\" value=\"1000\"></label>",
+      "css": ".ds-range{font-family:Atkinson,\"Segoe UI\",sans-serif;color:var(--ink);font-size:.85rem}.ds-range input{display:block;width:100%;accent-color:var(--blue);caret-color:var(--blue)}.ds-range input:focus-visible{outline:3px solid var(--blue);outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Interactive mathematics exhibit",
+    "overview": "The interface uses clear type, exact diagrams and generous space to make unfamiliar research understandable. Figures carry relationships; short labels identify the parts. Detailed reading remains available through explicit controls.\n\nWhite and pale blue form the reading ground. Navy anchors the text, cobalt identifies interaction, and restrained semantic colors distinguish parts of a comparison. The design supports both visual explanation and honest progress reporting.",
+    "keyCharacteristics": [
+      "Precise geometric diagrams with consistent strokes.",
+      "Readable lettering and clear control states.",
+      "Additional detail appears on demand."
+    ],
+    "rules": [
+      {
+        "name": "The Label Rule",
+        "body": "A status, data group or comparison remains identifiable without its color.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do pair color with an explicit label.",
+      "Do use the existing geometric SVG stroke system.",
+      "Do preserve visible keyboard focus and reduced-motion behavior.",
+      "Do identify illustrative figures and provisional settings."
+    ],
+    "donts": [
+      "Don't replace the infographic with a wall of paragraphs.",
+      "Don't present illustrative values as measured results.",
+      "Don't use a decoration in place of an explanatory figure."
+    ]
+  }
+}

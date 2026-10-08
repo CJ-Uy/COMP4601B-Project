@@ -1,0 +1,1065 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A living research document exploring whether a small language model can solve maths with shorter English and multilingual reasoning."
+    />
+    <meta name="theme-color" content="#132d4f" />
+    <title>Compact reasoning | A living research project</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="#main" aria-label="Compact reasoning home"
+        ><svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M5 8h22M5 16h14M5 24h7" />
+          <circle cx="26" cy="24" r="3" /></svg
+        ><span>Compact reasoning</span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="#explore">Explainer</a><a href="#progress">Progress</a
+        ><a href="#results">Results</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section
+        id="explore"
+        class="section-wrap experiment"
+        aria-labelledby="explore-title"
+      >
+        <div class="flow-intro">
+          <h1 id="explore-title">How our research works</h1>
+          <p>Can a small model solve maths with fewer written steps?</p>
+          <div class="flow-intro-note">
+            <span id="study-status">Loading latest research update</span
+            ><span>Tap a figure for the explanation</span>
+          </div>
+        </div>
+        <div class="flow-layout">
+          <div
+            class="flow-map"
+            role="group"
+            aria-label="Interactive research flowchart"
+          >
+            <button
+              type="button"
+              class="flow-node"
+              data-stage="data"
+              aria-pressed="false"
+              aria-haspopup="dialog"
+              aria-label="1. Start with existing questions and solutions. Open explanation."
+            >
+              <span class="node-heading"
+                ><span class="node-number">1</span
+                ><strong>Start with existing questions + solutions</strong
+                ><span class="node-action">Explore</span></span
+              >
+              <span class="node-subtitle"
+                >GSM8K · 7,473 training questions + 1,319 official test
+                questions</span
+              >
+              <span class="source-example">
+                <span class="question-sheet"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 2h8l5 5v15H6zM14 2v6h5M9 12h7M9 16h5" /></svg
+                  ><b>Question</b
+                  ><span>3 notebooks × $5<br />Pay $20. Change?</span></span
+                >
+                <svg class="right-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 12h18m-6-6 6 6-6 6" />
+                </svg>
+                <span class="original-work"
+                  ><b>Existing worked answer</b
+                  ><span
+                    >Cost: 3 × 5 = 15<br />Change: 20 − 15 =
+                    <strong>5</strong></span
+                  ></span
+                >
+              </span>
+              <span class="node-footnote"
+                >Keep the question and correct answer.</span
+              >
+            </button>
+            <svg class="flow-arrow" viewBox="0 0 600 28" aria-hidden="true">
+              <path d="M300 2v22m-6-6 6 6 6-6" />
+            </svg>
+            <button
+              type="button"
+              class="flow-node"
+              data-stage="rewrite"
+              aria-pressed="false"
+              aria-label="2. Rewrite the worked solutions. Open explanation."
+            >
+              <span class="node-heading"
+                ><span class="node-number">2</span
+                ><strong>Propose different ways to write the work</strong
+                ><span class="node-action">Explore</span></span
+              >
+              <span class="node-subtitle"
+                >Claude or GPT helps rewrite the given solution. Same question,
+                same maths.</span
+              >
+              <span class="rewrite-flow"
+                ><span class="question-sheet"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 2h8l5 5v15H6zM14 2v6h5M9 12h7M9 16h5" /></svg
+                  ><span>3 notebooks × $5<br />Pay $20. Change?</span></span
+                ><svg class="fork-arrow" viewBox="0 0 58 80" aria-hidden="true">
+                  <path
+                    d="M2 40h20V18h30m-6-6 6 6-6 6M22 40v22h30m-6-6 6 6-6 6"
+                  /></svg
+                ><span class="rewrite-branches"
+                  ><span
+                    ><b>Compact English</b
+                    ><small>Cost: 3×5=15; change: 20−15=5.</small></span
+                  ><span
+                    ><b>Mixed language</b
+                    ><small
+                      ><span lang="zh">成本</span>: 3×5=15; change:
+                      20−15=5.</small
+                    ></span
+                  ></span
+                ></span
+              >
+            </button>
+            <svg class="flow-arrow" viewBox="0 0 600 28" aria-hidden="true">
+              <path d="M300 2v22m-6-6 6 6 6-6" />
+            </svg>
+            <button
+              type="button"
+              class="flow-node"
+              data-stage="select"
+              aria-pressed="false"
+              aria-label="3. Check and choose the examples. Open explanation."
+            >
+              <span class="node-heading"
+                ><span class="node-number">3</span
+                ><strong>Check the maths and choose examples</strong
+                ><span class="node-action">Explore</span></span
+              >
+              <span class="selection-flow"
+                ><span class="candidate-grid"
+                  ><b>8 candidates</b><span>EN</span><span>EN</span
+                  ><span>EN</span><span>EN</span><span>中/EN</span
+                  ><span>中/EN</span><span>中/EN</span><span>中/EN</span></span
+                ><svg class="fork-arrow" viewBox="0 0 58 80" aria-hidden="true">
+                  <path
+                    d="M2 40h20V18h30m-6-6 6 6-6 6M22 40v22h30m-6-6 6 6-6 6"
+                  /></svg
+                ><span class="selection-branches"
+                  ><span
+                    ><b>Shortest valid</b
+                    ><small>Count student tokens</small></span
+                  ><span
+                    ><b>Useful + short</b
+                    ><small>Can frozen Qwen finish correctly?</small></span
+                  ></span
+                ></span
+              >
+              <span class="node-footnote"
+                >Reject changed calculations. Test feedback over repeated
+                attempts.</span
+              >
+            </button>
+            <svg class="flow-arrow" viewBox="0 0 600 28" aria-hidden="true">
+              <path d="M300 2v22m-6-6 6 6 6-6" />
+            </svg>
+            <button
+              type="button"
+              class="flow-node"
+              data-stage="train"
+              aria-pressed="false"
+              aria-label="4. Teach the small model with LoRA, including the required original-solution baseline. Open explanation."
+            >
+              <span class="node-heading"
+                ><span class="node-number">4</span
+                ><strong>Teach the small model with LoRA</strong
+                ><span class="node-action">Explore</span></span
+              >
+              <span class="lora-flow"
+                ><span class="frozen-block"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M9 5l3 3 3-3M9 19l3-3 3 3"
+                    /></svg
+                  ><b>Original Qwen</b><small>Weights stay frozen</small></span
+                ><span class="math-sign">+</span
+                ><span class="learned-block"
+                  ><span class="adapter-bars"><i></i><i></i><i></i></span
+                  ><b>LoRA additions</b><small>These values learn</small></span
+                ><svg
+                  class="right-arrow"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M3 12h18m-6-6 6 6-6 6" /></svg
+                ><span class="adapted-block"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 2h8l5 5v15H6zM14 2v6h5M9 12h7M9 16h5" /></svg
+                  ><b>Adapted Qwen</b><small>Generates the format</small></span
+                ></span
+              >
+              <span class="baseline-path"
+                ><b>Required baseline</b
+                ><span
+                  >Original GSM8K solutions → identical LoRA training</span
+                ></span
+              >
+              <span class="node-footnote"
+                >4 rewritten conditions + 1 original-solution baseline = 5
+                training conditions</span
+              >
+            </button>
+            <svg class="flow-arrow" viewBox="0 0 600 28" aria-hidden="true">
+              <path d="M300 2v22m-6-6 6 6 6-6" />
+            </svg>
+            <button
+              type="button"
+              class="flow-node"
+              data-stage="test"
+              aria-pressed="false"
+              aria-label="5. Test all conditions on held-out questions. Open explanation."
+            >
+              <span class="node-heading"
+                ><span class="node-number">5</span
+                ><strong>Test on questions not used for tuning</strong
+                ><span class="node-action">Explore</span></span
+              >
+              <span class="test-flow"
+                ><span
+                  ><b>New question only</b
+                  ><small>No worked answer supplied</small></span
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 12h18m-6-6 6 6-6 6" /></svg
+                ><span
+                  ><b>Qwen + LoRA</b><small>Working + final answer</small></span
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 12h18m-6-6 6 6-6 6" /></svg
+                ><span class="metric-stack"
+                  ><b>Accuracy</b><b>Tokens</b><b>Time</b></span
+                ></span
+              >
+              <span class="node-footnote"
+                >Did shorter steps preserve correct answers? We do not know
+                yet.</span
+              >
+            </button>
+            <p class="flow-caption">
+              Diagram examples are illustrative. Model choice, data sizes and
+              training settings will be checked in the pilot.
+            </p>
+          </div>
+          <aside
+            class="infographic-side"
+            aria-label="Data sizes and batch size infographic"
+          >
+            <h2>Where the questions go</h2>
+            <button
+              type="button"
+              class="data-overview"
+              data-open="data"
+              data-level="example"
+              aria-haspopup="dialog"
+              aria-label="Explore data groups and why these sizes are proposed"
+            >
+              <span class="training-pool">
+                <span class="pool-heading"
+                  ><b>7,473</b> official training questions</span
+                >
+                <span class="pool-selected">
+                  <span class="data-block learning"
+                    ><b>1,000</b><span>Learn the format</span
+                    ><span class="pilot-inside"
+                      ><b>100-question pilot</b>inside the 1,000</span
+                    ></span
+                  >
+                  <span class="data-block calibration"
+                    ><b>300</b><span>Choose the selection rule</span></span
+                  >
+                  <span class="data-block development"
+                    ><b>200</b><span>Choose training settings</span></span
+                  >
+                  <span class="selection-total"
+                    ><b>1,500</b> different questions</span
+                  >
+                </span>
+                <span class="remaining-data"
+                  ><b>5,973</b> remain for expansion</span
+                >
+              </span>
+              <svg class="side-divider" viewBox="0 0 280 24" aria-hidden="true">
+                <path d="M10 12h260" stroke-dasharray="4 5" />
+              </svg>
+              <span class="locked-test"
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="5" y="10" width="14" height="11" rx="2" />
+                  <path d="M8 10V6a4 4 0 0 1 8 0v4" /></svg
+                ><span
+                  ><b>1,319 official test</b
+                  ><span>Final evaluation only</span></span
+                ></span
+              >
+              <span class="tap-hint">Why these numbers? Tap to see.</span>
+            </button>
+            <h2>Dataset ≠ batch</h2>
+            <button
+              type="button"
+              class="batch-overview"
+              data-open="train"
+              data-level="example"
+              aria-haspopup="dialog"
+              aria-label="Explore dataset size versus batch size"
+            >
+              <span class="stack-to-batch"
+                ><span class="dataset-stack"
+                  ><i></i><i></i><i></i><i></i><b>1,000 examples</b></span
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 12h18m-6-6 6 6-6 6" /></svg
+                ><span class="batch-handful"
+                  ><span><i>1</i><i>2</i><i>3</i><i>4</i></span
+                  ><b>4 at a time</b></span
+                ></span
+              >
+              <span class="tap-hint"
+                >Illustrative batch. Tap to change it.</span
+              >
+            </button>
+            <p class="side-note">
+              Data sizes are starting targets. The pilot checks what fits our
+              laptops.
+            </p>
+          </aside>
+        </div>
+        <dialog
+          id="detail-dialog"
+          class="flow-details"
+          aria-labelledby="selected-stage-name"
+        >
+          <div class="panel-header">
+            <h2 id="selected-stage-name">1 · Get the data</h2>
+            <button
+              type="button"
+              id="close-detail"
+              aria-label="Close explanation"
+              autofocus
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 6 12 12M18 6 6 18" />
+              </svg>
+            </button>
+          </div>
+          <div class="reading-controls">
+            <div role="group" aria-label="Explanation depth">
+              <button type="button" data-depth="plain" aria-pressed="true">
+                The idea</button
+              ><button type="button" data-depth="example" aria-pressed="false">
+                Visual example</button
+              ><button type="button" data-depth="method" aria-pressed="false">
+                Method details
+              </button>
+            </div>
+          </div>
+          <article
+            id="stage-content"
+            class="stage-content"
+            aria-live="polite"
+          ></article>
+          <div class="panel-navigation">
+            <button type="button" id="previous-step">Previous step</button
+            ><button type="button" id="next-step">Next step</button>
+          </div>
+          <p class="fine-print">
+            Exploring the diagram does not change research progress.
+          </p>
+        </dialog>
+        <details class="solution-example">
+          <summary>Try switching the example’s solution format</summary>
+          <div class="solution-demo">
+            <h2>One question. Different ways to write the work.</h2>
+            <p class="demo-question">
+              You pay $20 for three notebooks costing $5 each.<br />How much
+              change do you get?
+            </p>
+            <div class="segmented" role="group" aria-label="Solution format">
+              <button type="button" data-format="original" aria-pressed="true">
+                Original style
+              </button>
+              <button type="button" data-format="english" aria-pressed="false">
+                Compact English
+              </button>
+              <button type="button" data-format="mixed" aria-pressed="false">
+                Mixed language
+              </button>
+            </div>
+            <div id="demo-work" class="demo-work" aria-live="polite">
+              <div>
+                <span class="work-step">Cost</span>
+                <p id="demo-cost">
+                  Three notebooks at five dollars each cost 3 × 5 = 15 dollars.
+                </p>
+              </div>
+              <div>
+                <span class="work-step">Change</span>
+                <p id="demo-change">
+                  Subtract the cost from the amount paid: 20 − 15 = 5 dollars.
+                </p>
+              </div>
+            </div>
+            <div class="demo-answer">
+              <span>The answer stays the same</span><strong>$5</strong>
+            </div>
+            <p class="fine-print">
+              Illustrative example. Shorter-looking text may use more tokens. We
+              will count with the small model’s tokenizer.
+            </p>
+          </div>
+        </details>
+      </section>
+      <details class="reference-details">
+        <summary class="section-wrap">
+          Explore the five training conditions and tools
+        </summary>
+        <section class="conditions-band" aria-labelledby="conditions-title">
+          <div class="section-wrap">
+            <div class="section-intro">
+              <h2 id="conditions-title">
+                Five training conditions. One fair comparison.
+              </h2>
+              <p>
+                Every condition uses the same training question IDs, the same
+                starting model and the same training setup. Only the target
+                solutions differ.
+              </p>
+            </div>
+            <div class="table-scroll">
+              <table>
+                <caption>
+                  Required original-solution baseline and four rewritten
+                  conditions
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Training condition</th>
+                    <th scope="col">Language allowed</th>
+                    <th scope="col">How the solution is chosen</th>
+                  </tr>
+                </thead>
+                <tbody id="conditions-body"></tbody>
+              </table>
+            </div>
+            <p>
+              The unchanged model is an additional reference. It helps show what
+              training itself changes, but it cannot replace the
+              original-solution training baseline.
+            </p>
+          </div>
+        </section>
+
+        <section class="section-wrap tools" aria-labelledby="tools-title">
+          <div class="section-intro">
+            <h2 id="tools-title">Who does what?</h2>
+            <p>
+              The helper writes possible examples. The small model learns from
+              the selected examples. The software connects those steps.
+            </p>
+          </div>
+          <dl class="tool-list">
+            <div>
+              <dt>Claude or GPT</dt>
+              <dd>
+                A capable helper proposes rewrites of existing worked solutions.
+                We will record the exact model version after the pilot.
+              </dd>
+            </div>
+            <div>
+              <dt>Qwen3-0.6B</dt>
+              <dd>
+                The starting student model. The pilot will compare feasibility
+                with 1.7B before choosing one model for every condition.
+              </dd>
+            </div>
+            <div>
+              <dt>Transformers + PyTorch</dt>
+              <dd>
+                Python tools that load the student, generate answers and run
+                training. Transformers also gives us the student’s tokenizer.
+              </dd>
+            </div>
+            <div>
+              <dt>PEFT + LoRA</dt>
+              <dd>
+                PEFT is the library that adds LoRA. LoRA learns small weight
+                additions while the original model stays frozen.
+              </dd>
+            </div>
+            <div>
+              <dt>Ollama + Qwen3-8B</dt>
+              <dd>
+                A local fallback for writing candidate solutions. Ollama runs
+                models on our computer. The helper and student can belong to
+                different model families.
+              </dd>
+            </div>
+          </dl>
+        </section>
+      </details>
+      <section
+        id="progress"
+        class="progress-band"
+        aria-labelledby="progress-title"
+      >
+        <div class="section-wrap">
+          <div class="progress-heading">
+            <div>
+              <h2 id="progress-title">Where the project stands</h2>
+              <p id="current-phase">Study design and setup</p>
+            </div>
+            <p id="last-updated" class="fine-print">
+              Loading the latest update…
+            </p>
+          </div>
+          <p id="progress-summary">No experiments have run yet.</p>
+          <p id="update-error" class="update-error" role="alert" hidden></p>
+          <ol id="milestone-list" class="milestone-list"></ol>
+          <details class="decision-log">
+            <summary>Read the decisions behind the plan</summary>
+            <div id="decision-list"></div>
+          </details>
+        </div>
+      </section>
+
+      <section
+        id="results"
+        class="section-wrap results"
+        aria-labelledby="results-title"
+      >
+        <div class="section-intro">
+          <h2 id="results-title">Results will live here.</h2>
+          <p>
+            Only measured runs belong in this section. Each result will identify
+            the model, data split, seed, reasoning budget and evidence file.
+          </p>
+        </div>
+        <div class="results-controls">
+          <label for="result-budget">Reasoning budget</label
+          ><select id="result-budget">
+            <option value="128">128 tokens</option>
+            <option value="256" selected>256 tokens</option>
+            <option value="512">512 tokens</option></select
+          ><label for="result-split">Data split</label
+          ><select id="result-split">
+            <option value="development">Development</option>
+            <option value="official-test" selected>Official test</option>
+            <option value="transfer">New transfer problems</option></select
+          ><span id="result-count" aria-live="polite"></span>
+        </div>
+        <div id="results-empty" class="results-empty">
+          <svg viewBox="0 0 72 48" aria-hidden="true">
+            <path d="M8 5v35h56M18 32v-8m14 8V16m14 16V9m14 23V5" />
+          </svg>
+          <h3>The experiment has not run yet.</h3>
+          <p>
+            We will publish accuracy, average output tokens and elapsed time
+            after collecting real measurements. The interactive examples above
+            are explanations, not results.
+          </p>
+        </div>
+        <div id="results-table-wrap" class="table-scroll" hidden>
+          <table>
+            <caption>
+              Measured experiment runs
+            </caption>
+            <thead>
+              <tr>
+                <th>Condition</th>
+                <th>Correct answers</th>
+                <th>Mean tokens</th>
+                <th>Mean seconds</th>
+                <th>Run and evidence</th>
+              </tr>
+            </thead>
+            <tbody id="results-body"></tbody>
+          </table>
+        </div>
+        <details>
+          <summary>What would count as an improvement?</summary>
+          <p>
+            Our provisional target is 20% fewer generated tokens with no more
+            than a 3 percentage point drop in accuracy against relevant matched
+            baselines. For example, 70% accuracy falling to 67% is a 3
+            percentage point drop. These are proposed criteria, not a measured
+            outcome.
+          </p>
+          <p>
+            We will count failed and unfinished answers too, compare the same
+            test questions and report uncertainty. A fast, short answer that is
+            wrong does not establish a useful improvement.
+          </p>
+        </details>
+      </section>
+
+      <section class="section-wrap questions" aria-labelledby="questions-title">
+        <h2 id="questions-title">Questions we asked along the way</h2>
+        <details>
+          <summary>Where did the strangely specific 1,319 come from?</summary>
+          <p>
+            It is the size of GSM8K’s official test split. We did not choose it.
+            The dataset has 7,473 training questions and 1,319 test questions,
+            totalling 8,792. The proposed 1,000, 300 and 200 groups are our
+            subdivisions of the training pool.
+          </p>
+          <p>
+            <a href="https://huggingface.co/datasets/openai/gsm8k"
+              >See GSM8K’s official dataset card</a
+            >.
+          </p>
+        </details>
+        <details>
+          <summary>
+            Why use only 1,000 training questions when more are available?
+          </summary>
+          <p>
+            To keep the experiment feasible. Preparing eight rewrites per
+            question, checking them and training five conditions takes time. For
+            the 1,000 training questions alone, that would mean up to 8,000
+            candidates and 16,000 two-attempt feedback completions, before
+            additional checks. We will profile a 100-question pilot before
+            deciding how far to expand.
+          </p>
+        </details>
+        <details>
+          <summary>
+            Why generate anything when GSM8K already has solutions?
+          </summary>
+          <p>
+            We can train on its existing solutions directly, and that is our
+            required baseline. Rewriting creates a different format for the same
+            answer, so we can test compact English and multilingual text. It
+            does not create new questions or automatically make the solutions
+            better.
+          </p>
+        </details>
+        <details>
+          <summary>Why not use the most capable helper we have?</summary>
+          <p>
+            We plan to try an available capable Claude or GPT model. But quality
+            means more than fluent writing: a candidate must preserve the
+            calculations, use fewer student-model tokens and remain useful to
+            that student. A stronger helper is a good starting point, not proof
+            of those properties.
+          </p>
+        </details>
+        <details>
+          <summary>
+            Does temperature zero make examples correct or fully repeatable?
+          </summary>
+          <p>
+            Temperature controls how much generation varies. Lower variation
+            does not guarantee correct maths, the best compression or identical
+            outputs across every software and hardware setup. We will save the
+            checked examples and record model versions, prompts, seeds and
+            settings. Candidate diversity can come from explicit rewrite formats
+            and appropriate sampling.
+          </p>
+        </details>
+        <details>
+          <summary>Is Qwen3-0.6B the same thing as a batch size?</summary>
+          <p>
+            No. The model name describes the size of the model. A dataset size
+            counts different training examples. A batch size counts examples
+            processed together during training. We will choose the actual model
+            and batch size from pilot measurements, rather than treating any
+            proposed number as optimal.
+          </p>
+        </details>
+      </section>
+      <footer class="site-footer section-wrap">
+        <div>
+          <h2>Read the sources. Follow the evidence.</h2>
+          <p>
+            This living document explains a proposed study. We will update it as
+            decisions change and experiments finish.
+          </p>
+        </div>
+        <ul>
+          <li>
+            <a href="https://huggingface.co/datasets/openai/gsm8k"
+              >GSM8K data and split counts</a
+            >
+          </li>
+          <li>
+            <a href="https://huggingface.co/Qwen/Qwen3-0.6B"
+              >Qwen3-0.6B model card</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://huggingface.co/docs/peft/main/conceptual_guides/lora"
+              >LoRA explained by PEFT</a
+            >
+          </li>
+          <li>
+            <a href="https://huggingface.co/docs/transformers/index"
+              >Transformers documentation</a
+            >
+          </li>
+        </ul>
+        <p class="footer-course">COMP 4901B · HKUST · 2026</p>
+      </footer>
+    </main>
+
+    <template id="stage-data">
+      <section data-panel="plain">
+        <h3>Start with questions that already have worked answers.</h3>
+        <p>
+          GSM8K is a collection of school-level maths word problems. A training
+          example has a question, a written solution and a final numeric answer.
+          We keep the question and correct answer, and change only how the
+          working is written.
+        </p>
+        <p>
+          Different questions have different jobs. Training teaches the model.
+          Calibration chooses our example-selection rule. Development chooses
+          training settings. The final test checks the frozen design.
+        </p>
+        <div class="equation-line">
+          <strong>7,473</strong><span>official training questions</span
+          ><strong>1,319</strong><span>official test questions</span>
+        </div>
+        <p class="fine-print">
+          Official counts from
+          <a href="https://huggingface.co/datasets/openai/gsm8k"
+            >OpenAI’s GSM8K dataset</a
+          >. The proposed smaller groups are our choices.
+        </p>
+      </section>
+      <section data-panel="example" hidden>
+        <h3>A pilot is part of the training group.</h3>
+        <p>
+          The proposed plan uses 1,500 distinct questions from the training
+          pool: 1,000 for learning, 300 for calibration and 200 for development.
+          The first 100 learning questions form the pilot, so they are already
+          inside the 1,000.
+        </p>
+        <div class="split-visual">
+          <div class="learning-group">
+            <strong id="split-training">1,000 training</strong
+            ><span>Includes the 100-question pilot</span>
+          </div>
+          <div>
+            <strong>300 calibration</strong
+            ><span>Choose the selection penalty</span>
+          </div>
+          <div>
+            <strong>200 development</strong
+            ><span>Choose training settings</span>
+          </div>
+          <div class="test-group">
+            <strong>1,319 official test</strong
+            ><span>Evaluate only after settings are frozen</span>
+          </div>
+        </div>
+        <label class="range-label" for="training-size"
+          >Explore a possible training size
+          <output id="training-value" for="training-size">1,000</output></label
+        ><input
+          id="training-size"
+          type="range"
+          min="100"
+          max="6000"
+          step="100"
+          value="1000"
+        />
+        <p id="split-total" aria-live="polite">
+          1,500 selected from the training pool; 5,973 left for possible
+          expansion.
+        </p>
+        <p class="fine-print">
+          This slider illustrates the arithmetic. It does not change or save the
+          research plan.
+        </p>
+      </section>
+      <section data-panel="method" hidden>
+        <h3>Split the questions before making rewrites.</h3>
+        <p>
+          Shuffle the official training question IDs with a saved random seed.
+          Assign non-overlapping groups for training, calibration and
+          development. Every rewrite of one question remains in its original
+          group. No question has been selected yet.
+        </p>
+        <p>
+          The 1,000/300/200 plan depends on the pilot’s costs. The
+          1,319-question official test set stays separate. We also propose 200
+          new arithmetic problems with known answers and withheld templates for
+          a transfer check; those are additional problems, outside GSM8K.
+        </p>
+        <p>
+          Five conditions reuse the same training question IDs. With 1,000
+          accepted questions, each condition sees 1,000 targets in its own
+          format. That is five versions of a shared question set, not 5,000
+          distinct maths questions.
+        </p>
+      </section>
+    </template>
+    <template id="stage-rewrite">
+      <section data-panel="plain">
+        <h3>Change the wording. Preserve the maths.</h3>
+        <p>
+          A capable helper model reads the existing correct solution and
+          proposes shorter versions. One group allows English and equations. The
+          other allows English, Mandarin and equations, with English still
+          available when it works better.
+        </p>
+        <p>
+          We are testing whether the extra language choices help the small
+          model. Mandarin is an option, not a requirement in every sentence. The
+          helper’s model family does not have to match the student’s.
+        </p>
+      </section>
+      <section data-panel="example" hidden>
+        <h3>Different formats for the same calculation.</h3>
+        <div class="rewrite-rows">
+          <div>
+            <strong>Original style</strong>
+            <p>
+              Three notebooks at five dollars each cost fifteen dollars.
+              Subtract fifteen from twenty to get five dollars in change.
+            </p>
+          </div>
+          <div>
+            <strong>Compact English</strong>
+            <p>Cost: 3 × 5 = 15. Change: 20 − 15 = 5.</p>
+          </div>
+          <div>
+            <strong>Mixed language</strong>
+            <p><span lang="zh">成本</span>: 3 × 5 = 15. Change: 20 − 15 = 5.</p>
+          </div>
+        </div>
+        <p>
+          These are illustrative rewrites. We must still measure their token
+          counts with the student’s tokenizer. Compact-looking text can tokenize
+          badly, especially across languages.
+        </p>
+      </section>
+      <section data-panel="method" hidden>
+        <h3>Generate eight candidates, then check them.</h3>
+        <p>
+          For each training question, request four English-and-equation versions
+          and four versions allowing both languages and equations. Use a capable
+          available Claude or GPT model, with Qwen3-8B through Ollama as a local
+          fallback. Fix and record the generator after the pilot.
+        </p>
+        <p>
+          Keep the question and final answer unchanged. Check intermediate
+          calculations using Python and review a sample for missing steps or
+          altered meaning. Remove invalid question bundles from every condition
+          so one condition does not get easier questions.
+        </p>
+        <p>
+          The original-solution baseline bypasses this rewriting step. It learns
+          from the dataset’s supplied solutions with their wording unchanged.
+        </p>
+      </section>
+    </template>
+    <template id="stage-select">
+      <section data-panel="plain">
+        <h3>The shortest example may be too short to learn from.</h3>
+        <p>
+          A token is a piece of text the model processes. Its tokenizer splits a
+          solution into these pieces so we can count its length.
+        </p>
+        <p>
+          One rule chooses the shortest valid rewrite. Another rule asks whether
+          the small model can use it: give the unchanged student part of the
+          working and see whether it finishes correctly.
+        </p>
+        <p>
+          That second rule balances usable information against length. We
+          compare both rules in each language condition to find out whether the
+          feedback adds value.
+        </p>
+      </section>
+      <section data-panel="example" hidden>
+        <h3>Test whether the student can finish the work.</h3>
+        <div class="selection-example">
+          <div>
+            <span>Give the student the question and first step</span>
+            <p>Cost: 3 × 5 = 15.</p>
+          </div>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 4v16m-6-6 6 6 6-6" />
+          </svg>
+          <div>
+            <span>Check its completion against the known answer</span>
+            <p>Change: 20 − 15 = 5.</p>
+          </div>
+        </div>
+        <p>
+          A candidate that loses a necessary step may save tokens but cause
+          wrong completions. The example above is illustrative; actual
+          selections require recorded model attempts.
+        </p>
+      </section>
+      <section data-panel="method" hidden>
+        <h3>Keep the feedback model unchanged during selection.</h3>
+        <p>
+          Give the frozen student the question and the first half of each
+          candidate’s solution steps. Score correctness across two completion
+          attempts, then subtract a token-length penalty. Choose the penalty
+          weight on the 300 calibration questions and recheck a subset with
+          eight attempts.
+        </p>
+        <p>
+          Measure candidate length with the student’s tokenizer. Two attempts
+          give a noisy signal, so the pilot must test whether selection is
+          stable and informative. All scoring uses training or calibration
+          questions, never the official test questions.
+        </p>
+        <p>
+          Prefix completion is only a selection tool. At final evaluation the
+          student gets the question alone and must generate its own working and
+          answer.
+        </p>
+      </section>
+    </template>
+    <template id="stage-train">
+      <section data-panel="plain">
+        <h3>LoRA teaches small additions to the model.</h3>
+        <p>
+          A model has learned numerical values called weights. Ordinary
+          fine-tuning can change many of them. LoRA keeps the original weights
+          frozen and learns smaller additions that change how the model
+          responds.
+        </p>
+        <div class="lora-diagram">
+          <div class="base-model">
+            <strong>Original Qwen model</strong><span>Weights stay frozen</span>
+          </div>
+          <span class="plus">+</span>
+          <div class="adapter">
+            <strong>LoRA additions</strong><span>These are trained</span>
+          </div>
+          <span class="equals">=</span>
+          <div>
+            <strong>Adapted model</strong><span>Generates the solution</span>
+          </div>
+        </div>
+        <p>
+          We will train a separate adapter for each condition. This reduces the
+          number of values trained, but it still needs memory, time and testing.
+        </p>
+      </section>
+      <section data-panel="example" hidden>
+        <h3>A dataset is the stack. A batch is one handful.</h3>
+        <p>
+          Imagine 1,000 training examples. A batch size of 4 processes four at a
+          time. One epoch means passing through the full stack once. Changing
+          the batch size does not change the number of distinct questions.
+        </p>
+        <label for="batch-size">Illustrative batch size</label
+        ><select id="batch-size">
+          <option value="1">1 example</option>
+          <option value="2">2 examples</option>
+          <option value="4" selected>4 examples</option>
+          <option value="8">8 examples</option>
+        </select>
+        <div id="batch-tiles" class="batch-tiles" aria-hidden="true"></div>
+        <p id="batch-summary" aria-live="polite">
+          1,000 examples ÷ 4 at a time = 250 batches per epoch.
+        </p>
+        <p class="fine-print">
+          These are examples, not chosen settings. With gradient accumulation,
+          several batches can contribute to one weight update. The pilot will
+          settle the actual batch size, accumulation and epoch count.
+        </p>
+      </section>
+      <section data-panel="method" hidden>
+        <h3>Hold the training setup constant.</h3>
+        <p>
+          Use Transformers to load Qwen and its tokenizer, PyTorch to run
+          training, and PEFT to apply LoRA. Train five separate adapters from
+          the same original checkpoint. Use identical questions, prompts and
+          training settings, varying only the target-solution format and
+          selection rule.
+        </p>
+        <p>
+          Start with Qwen3-0.6B and compare feasibility with Qwen3-1.7B during
+          the pilot. The smaller checkpoint leaves more room for repeated runs
+          on the assumed RTX 4060-class laptops. It is a starting choice, not
+          evidence that it is the best model.
+        </p>
+        <p>
+          Measure memory and time before choosing batch size, learning rate,
+          LoRA settings and the final training size. Document any changes before
+          the full comparison.
+        </p>
+      </section>
+    </template>
+    <template id="stage-test">
+      <section data-panel="plain">
+        <h3>Give every model new questions and the same budget.</h3>
+        <p>
+          After fixing the settings, give each condition the same official test
+          questions. The model gets only the question, without the worked
+          solution. We record correct answers, generated tokens and time.
+        </p>
+        <p>
+          Shorter answers are useful only if they preserve enough accuracy.
+          Testing all five trained conditions tells us whether improvements come
+          from training, compact wording, language choice or example selection.
+        </p>
+      </section>
+      <section data-panel="example" hidden>
+        <h3>Compare two effects separately.</h3>
+        <div class="comparison-pairs">
+          <div>
+            <strong>Language choice</strong>
+            <p>
+              Compact English + feedback<br />compared with<br />Mixed language
+              + feedback
+            </p>
+          </div>
+          <div>
+            <strong>Example selection</strong>
+            <p>
+              Mixed language + shortest<br />compared with<br />Mixed language +
+              feedback
+            </p>
+          </div>
+        </div>
+        <p>
+          Then compare the rewritten conditions with the original GSM8K training
+          baseline. The unchanged Qwen model shows the starting point. These are
+          planned comparisons; we have no measured winner yet.
+        </p>
+      </section>
+      <section data-panel="method" hidden>
+        <h3>Measure accuracy and cost on paired questions.</h3>
+        <p>
+          Use reasoning budgets of 128, 256 and 512 student tokens, then allow
+          up to 64 answer tokens. Keep prompts and generation settings equal
+          across conditions. Count all outputs, including failed and unfinished
+          answers, and record elapsed time on the same hardware.
+        </p>
+        <p>
+          Freeze the settings before final testing. Report uncertainty from
+          paired questions, inspect 50 failures, and repeat training with three
+          seeds if feasible. Also test the new template-generated problems for
+          transfer.
+        </p>
+        <p>
+          A provisional success target is 20% fewer output tokens with at most a
+          3 percentage point accuracy loss against relevant baselines. Negative
+          results remain useful evidence. Written traces alone do not prove the
+          model’s internal reasoning process.
+        </p>
+      </section>
+    </template>
+  </body>
+</html>

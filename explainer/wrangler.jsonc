@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "llm-proj",
+  "account_id": "8527ec1369d46f55304a6f59ab5356e4",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "./public" },
+  "routes": [{ "pattern": "llm-proj.cjuy.dev", "custom_domain": true }],
+}

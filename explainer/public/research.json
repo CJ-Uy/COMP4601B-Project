@@ -1,0 +1,66 @@
+{
+  "updated": "2026-10-09",
+  "phase": "Study design and setup",
+  "summary": "The proposal has been revised. The next step is a 100-question pilot to check data quality, model performance and laptop costs.",
+  "milestones": [
+    {
+      "title": "Revise the proposal",
+      "date": "2026-10-09",
+      "status": "done",
+      "note": "Include the original GSM8K baseline, separate data groups and the helper-model plan."
+    },
+    {
+      "title": "Run the 100-question pilot",
+      "date": "2026-10-29",
+      "status": "planned",
+      "note": "Check the rewrites, compare model sizes, choose batch size and train the original-solution baseline."
+    },
+    {
+      "title": "Complete five training conditions",
+      "date": null,
+      "status": "planned",
+      "note": "Expand only if the pilot's memory, time and quality checks support it."
+    },
+    {
+      "title": "Freeze settings and evaluate",
+      "date": null,
+      "status": "planned",
+      "note": "Use development data to choose settings before opening the official test set."
+    },
+    {
+      "title": "Present the findings",
+      "date": "2026-11-24",
+      "status": "planned",
+      "note": "Course presentation window: 24 to 26 November."
+    },
+    {
+      "title": "Submit the final report",
+      "date": "2026-12-04",
+      "status": "planned",
+      "note": "Report the comparisons, costs, limitations and negative results."
+    }
+  ],
+  "decisions": [
+    {
+      "date": "2026-10-09",
+      "title": "Include untouched GSM8K training",
+      "reason": "Rewriting must beat a model trained on the original worked solutions. This is a required baseline."
+    },
+    {
+      "date": "2026-10-09",
+      "title": "Use a capable helper for rewrites",
+      "reason": "Claude or GPT can propose compact text. Check the math and count tokens with the small model's tokenizer. Qwen3-8B through Ollama remains a local fallback."
+    },
+    {
+      "date": "2026-10-09",
+      "title": "Let the pilot settle model and batch size",
+      "reason": "Qwen3-0.6B is the starting candidate. Compare feasibility with 1.7B before fixing one model and one training setup for all conditions."
+    },
+    {
+      "date": "2026-10-09",
+      "title": "Keep the data groups separate",
+      "reason": "The 100 pilot questions are inside the proposed 1,000 training questions. The 300 calibration and 200 development questions are different questions."
+    }
+  ],
+  "results": []
+}
