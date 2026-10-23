@@ -58,7 +58,7 @@ Environment setup and small GPU smoke checks verify that software can run. The f
 Research work still required:
 
 1. Profile the pilot and compare the two proposed student sizes before fixing one.
-2. Collect the matched GPT-6.1 and Opus 5.5 chat exports, compare rewrite quality, and save displayed model/mode, prompts, raw outputs and available usage data. No teacher outputs have been collected yet.
+2. Complete the matched GPT-6.1 and Opus 5.5 outputs, compare rewrite quality, and save displayed model/mode, prompts, raw outputs and available usage data. Opus has produced 80/80 structurally valid candidates; GPT collection and human meaning review remain pending. See the [screening audit](pilots/2026-10-24-teacher-screening.md).
 3. Generate candidate rewrites, inspect arithmetic-validation failures and review meaning. Both researchers should inspect a sample; any change in meaning disqualifies that rewrite.
 4. Calibrate the length penalty and assess feedback ranking stability.
 5. Complete the matched five-condition training/evaluation and repeat seeds if resources permit.

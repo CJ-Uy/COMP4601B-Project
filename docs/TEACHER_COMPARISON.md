@@ -2,7 +2,7 @@
 
 The user chose **two teachers generating training solutions**, with outputs exported from their ChatGPT and Claude accounts. The student remains Qwen3-0.6B. We compare the teaching material and, subsequently, students trained on it; we do not train the hosted teachers.
 
-**Status on 24 October 2026:** shared prompts prepared; neither teacher's responses have been collected. The original-solution student baseline is trained and its quick development evaluation is running. No teacher quality result exists yet.
+**Status on 24 October 2026:** Opus produced all 80 candidates and all passed arithmetic/structure checks; GPT responses and human meaning review remain pending. See the [screening audit](pilots/2026-10-24-teacher-screening.md). The original-solution student baseline and its quick development comparison are [complete](pilots/2026-10-24-original-baseline.md). No teacher comparison winner has been established.
 
 ## First round: ten matched training questions
 

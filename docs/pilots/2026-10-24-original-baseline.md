@@ -1,6 +1,6 @@
 # Original-solution pilot: 24 October 2026
 
-**Status: original-solution training complete; development evaluation in progress.** This is the 100-training-question feasibility baseline, evaluated using separate development questions. It does not establish the multilingual method's performance.
+**Status: original-solution training and the requested quick development comparison complete.** This is the 100-training-question feasibility baseline, evaluated using separate development questions. It does not establish the multilingual method's performance.
 
 ## Reproduction
 
@@ -40,15 +40,30 @@ Training completed all three epochs and 39 optimizer updates. The final adapter 
 | Maximum prepared training sequence | 388 tokens |
 | Trainable adapter parameters | 5,046,272 |
 
-These are compute and training observations, not evidence of improved held-out accuracy. Development measurements are pending. Each evaluation retains predictions incrementally and writes `summary.json` only on completion. Do not interpret partial files as completed results.
+These training observations alone do not establish improved held-out accuracy. Both quick evaluations subsequently exited successfully, each with 50 predictions and a completed `summary.json`. The comparison command verified their paired settings and produced `artifacts/runs/pilot-quick-baseline-comparison.json`. A separate audit verified matching question IDs, seeds, gold answers and prompt-token counts, saved as `artifacts/runs/pilot-quick-baseline-audit.json`.
 
-The unchanged reference has completed all 50 development questions: 18 correct (36%), mean 128.38 generated tokens and 13.8091 seconds per question, zero runtime failures, one truncated output and 19 unparseable final answers. The adapter evaluation is still running; the paired comparison is pending.
+| Quick development measurement | Unchanged Qwen | Original-solution adapter |
+|---|---:|---:|
+| Questions | 50 | 50 |
+| Correct under the fixed answer parser | 18 | 24 |
+| Accuracy | 36% | 48% |
+| Mean generated tokens | 128.38 | 115.24 |
+| Mean generation time per question | 13.8091 s | 21.3756 s |
+| Total measured generation time | 690.4536 s | 1068.7796 s |
+| Runtime failures | 0 | 0 |
+| Truncated outputs | 1 | 1 |
+| Unparseable final answers, counted incorrect | 19 | 1 |
+
+The paired accuracy difference is **+12 percentage points**, with a question-bootstrap 95% interval of **−4 to +28 points** (2,000 bootstrap samples, seed 42). This interval includes zero and does not include training-seed variability. There are 12 newly correct questions and six lost correct answers; eight of those 12 gains had previously unparseable reference answers.
+
+Mean generated tokens decreased **10.24%**. This did not produce a speedup: measured time per question increased about **55%**. The current runtime loads an unmerged PEFT adapter; these timings include that implementation and this laptop's operating conditions. No merged-adapter performance experiment was run.
 
 Accuracy here requires a parseable numeric final answer after `####`; unparseable responses count as incorrect. This combines arithmetic success and output-format compliance. For example, the unchanged response for `train-5875` ends with `#### 29 pages in Lana's binder after adding Duane's.` while the gold answer is `29`; the extra text makes it unparseable under the fixed parser. Do not describe a later improvement in this metric as a pure improvement in arithmetic reasoning. The parser has not been changed after observing these outputs.
 
 ## Interpretation limits
 
 - This original-solution adapter tests ordinary fine-tuning feasibility; no rewritten examples or teacher output are used.
+- This small pilot does not establish an accuracy improvement, a deployment speedup, or the value of multilingual rewrites. The GPT-versus-Opus teacher comparison remains a separate experiment.
 - Development measurements guide the pilot. They are not final-test results and should not be presented as such.
 - A single training seed does not establish run-to-run stability. Token and accuracy changes must be considered together, including failure/truncation counts.
 - If later rewrite preparation excludes any questions, retrain the original baseline on the same retained IDs before making the five-condition comparison.
