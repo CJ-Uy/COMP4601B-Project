@@ -1,0 +1,7 @@
+-c requirements-lock.txt
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.8.0+cu128
+transformers==4.57.3
+datasets==4.4.1
+peft==0.18.0
+accelerate==1.12.0
