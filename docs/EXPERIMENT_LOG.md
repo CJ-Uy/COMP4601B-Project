@@ -10,6 +10,20 @@ Keep this file in Git so both researchers can see why the current settings were 
 - No teacher has been selected by setup, no human semantic review has been claimed, and no full five-condition or final-test result has been established.
 - Next research action: run and profile the original-solution pilot baseline, then choose the student/teacher and test a small rewrite batch.
 
+## 24 October 2026: original-solution pilot started
+
+- User authorized the 100-question pilot and full original-solution baseline training.
+- Source snapshot: `ab2747cbad821a739e47a69c34463d33b2336e9a`; no changes to the training code or pilot configuration for this run.
+- Prepared input identity matches `configs/pilot-data-lock.json`. Audited 100 training, 300 calibration and 200 development IDs: all disjoint, split hashes verified, and all gold final answers parse correctly.
+- Training uses the original supplied solutions, seed 42, three epochs, LoRA rank 8, batch size 1 and accumulation 8. Output: `artifacts/runs/pilot-original/`.
+- Initial plan: unchanged Qwen3-0.6B versus the original-solution adapter on all 200 development questions at reasoning budgets 128, 256 and 512. Superseded for this run by the user's explicit quick scope: the first 50 saved development questions, budget 256 plus up to 64 answer tokens. The full sweep is deferred; official test examples remain reserved.
+- Laptop observed on AC power with Legion Performance Mode; sampled hardware readings are retained in the training artifact directory. Timing remains specific to this hardware and its operating conditions.
+- Teacher decision: the user wants GPT-6.1 versus Opus 5.5 generating rewritten training solutions, with outputs imported from their ChatGPT and Claude accounts. The shared ten-question [protocol and prompt pack](TEACHER_COMPARISON.md) keep the datasets separate. Later teacher-specific student adapters must use matched IDs/settings. No teacher output was used in the original baseline, and no hosted teacher calls were made.
+- Training completed: three epochs, 39 optimizer updates, 188.1652 seconds of Trainer runtime, peak PyTorch-allocated VRAM 2,032,115,712 bytes. Final adapter and `run.json` are saved; this is a full pilot training run, not a smoke check.
+- Development evaluation is in progress. Current status and completed measurements: [pilot report](pilots/2026-10-24-original-baseline.md). Evaluation results will be entered only after their artifacts confirm completion.
+- Unchanged quick reference completed 50/50: 18 correct, mean 128.38 output tokens, zero runtime errors, one truncation and 19 unparseable final answers. The original adapter is now evaluating the same questions. Accuracy includes strict final-answer formatting; the pilot report records an example and this interpretation limit.
+- Teacher handoff: the user will open the repository with Opus. Added a [shared repository-assistant instruction](../prompts/run-teacher-comparison.md), with only the output arm changed for a fresh GPT-6.1 session. Keep the same conversation-isolation procedure for both teachers; record any UI/backend settings that cannot be controlled as unknown. Prompt-pack hashes and first-ten locked training IDs were verified, and all 30 Python tests pass.
+
 ## Copy for a research decision
 
 ```text
